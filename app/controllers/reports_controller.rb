@@ -1,4 +1,4 @@
 class ReportsController < CrudController
-  self.permitted_attrs = [:author_id, :event_id, :title, :content, :is_draft]
+  self.permitted_attrs = [:event_id, :title, :content]
   self.search_columns = [:title]
 end

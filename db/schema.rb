@@ -11,13 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629124447) do
+ActiveRecord::Schema.define(version: 20150629193050) do
 
   create_table "event_types", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name", limit: 255
+    t.text "about", limit: 65535
+    t.datetime "date_begin"
+    t.datetime "date_end"
+    t.string "url", limit: 255
+    t.integer "host_id", limit: 4
+    t.integer "event_type_id", limit: 4
+    t.integer "place_id", limit: 4
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "events", ["event_type_id"], name: "index_events_on_event_type_id", using: :btree
+  add_index "events", ["host_id"], name: "index_events_on_host_id", using: :btree
+  add_index "events", ["place_id"], name: "index_events_on_place_id", using: :btree
 
   create_table "hosts", force: :cascade do |t|
     t.string "name", limit: 255
@@ -49,13 +66,17 @@ ActiveRecord::Schema.define(version: 20150629124447) do
   end
 
   create_table "reports", force: :cascade do |t|
-    t.integer  "author_id",  limit: 4
-    t.integer  "event_id",   limit: 4
     t.string   "title",      limit: 255
     t.text     "content",    limit: 65535
-    t.boolean  "is_draft",   limit: 1
+    t.integer "event_id", limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
 
+  add_index "reports", ["event_id"], name: "index_reports_on_event_id", using: :btree
+
+  add_foreign_key "events", "event_types"
+  add_foreign_key "events", "hosts"
+  add_foreign_key "events", "places"
+  add_foreign_key "reports", "events"
 end

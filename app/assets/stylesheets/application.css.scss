@@ -3,7 +3,7 @@
 @import "bootstrap-sprockets";
 
 // Import cerulean variables
-@import "bootswatch/flatly/variables";
+@import "bootswatch/slate/variables";
 
 // Then bootstrap itself
 @import "bootstrap";
@@ -14,7 +14,7 @@ body {
 }
 
 // And finally bootswatch style itself
-@import "bootswatch/flatly/bootswatch";
+@import "bootswatch/slate/bootswatch";
 
 // Whatever application styles you have go last
-//@import "base";
+@import "crud";
