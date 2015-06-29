@@ -175,8 +175,7 @@ class CrudController < ListController
 
   # Perform a redirect after a successfull operation and set a flash notice.
   def redirect_on_success(options = {})
-    location = options[:location] ||
-               (entry.destroyed? ? index_path : show_path)
+    location = options[:location] || index_path
     flash[:notice] ||= flash_message(:success)
     redirect_to location
   end
