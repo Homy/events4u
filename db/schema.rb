@@ -11,12 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629081838) do
+ActiveRecord::Schema.define(version: 20150629124447) do
 
   create_table "event_types", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "hosts", force: :cascade do |t|
+    t.string "name", limit: 255
+    t.string "phone", limit: 255
+    t.text "about", limit: 65535
+    t.string "email", limit: 255
+    t.string "url", limit: 255
+    t.float "latitude", limit: 24
+    t.float "longitude", limit: 24
+    t.string "country", limit: 255
+    t.string "city", limit: 255
+    t.string "street_address", limit: 255
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "places", force: :cascade do |t|
