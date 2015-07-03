@@ -63,6 +63,8 @@ MIT
 ================================================================
 Local TODOs
 
+refine restrictions(buttons visibility, fields validation, etc)
+
 facebook:
 add import/export events
 
@@ -73,6 +75,7 @@ add tests
 fix date fields in edit forms
 
 users:
+fix authorization(resolve issue with identical emails)
 add admin tool to manage users
 add roles
 add gravatar/etc
@@ -87,7 +90,15 @@ gmaps :
 move processing to backgraund
 add maps to events
 add maps to views/show
+do not show map if theres no objects
 
 geolocation:
 add reverse geolocation
 add geo-filtering events
+
+security:
+move secrets to secrets :)
+sort it out with authorization(email-confirm,timeouts...)
+
+events:
+add list of reports below event(on view/show)
