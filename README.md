@@ -59,3 +59,35 @@ MIT
 
 
 **Free Software, Hell Yeah!**
+
+================================================================
+Local TODOs
+
+facebook:
+add import/export events
+
+descr setup process
+add seeds
+add tests
+
+fix date fields in edit forms
+
+users:
+add admin tool to manage users
+add roles
+add gravatar/etc
+
+add tags
+
+add i18n
+
+add reports
+
+gmaps :
+move processing to backgraund
+add maps to events
+add maps to views/show
+
+geolocation:
+add reverse geolocation
+add geo-filtering events

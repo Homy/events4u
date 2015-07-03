@@ -7,6 +7,7 @@ class HostsController < CrudController
     @hash = Gmaps4rails.build_markers(@hosts) do |host, marker|
       marker.lat host.latitude
       marker.lng host.longitude
+      marker.infowindow render_to_string(:partial => "/hosts/infowindow", :locals => {:object => host})
     end
   end
 end
