@@ -43,6 +43,24 @@ JavaScript Runtime        Node.js (V8)
 Database adapter          mysql2
 
 ```
+#Set up:
+    git clone https://github.com/Homy/events4u.git
+    cd events4u/
+    bundle install
+fix *config/database.yml*
+create *config/secrets.yml* with the data like this:
+FACEBOOK_APP_ID: ~~1621467891254778~~
+FACEBOOK_APP_SECRET: ~~b1ac35415353813404637f26a37a574b3d195540d68ac8468a4d~~
+GOOGLE_CLIENT_ID: ~~"57807402606845193-i1ladfhfds0a4coo0gf4rr6aer7v7gp1k4udfhftj.apps.googleusercontent.com"~~
+GOOGLE_CLIENT_SECRET: ~~"WPcLvEzadfhxoo5xaedfggROtWWeCZ0EE"~~
+
+    rake db:setup
+    rails s
+or if running on remote server
+
+    rails s -b 0.0.0.0 
+
+
 
 ### Todo's
  -Add translation(first ukrainian,later-multilang)
@@ -70,8 +88,6 @@ refine restrictions(buttons visibility, fields validation, etc)
 facebook:
 add import/export events
 
-descr setup process
-add seeds
 add tests
 
 fix date fields in edit forms
@@ -99,9 +115,8 @@ add reverse geocoding
 add geo-filtering events
 
 security:
-~~move secrets to secrets :)~~
 sort it out with authorization(email-confirm,timeouts...)
 
 events:
 add list of reports below event(on view/show)
-API
+API(need specs)
