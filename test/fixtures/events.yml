@@ -3,10 +3,8 @@
 one:
   name: MyString
   about: MyText
-  date_begin: 2015-06-29
-  time_begin: 21:02:32
-  date_end: 2015-06-29
-  time_end: 21:02:32
+  dateStart: 2015-06-29 21:02:32
+  dateEnd: 2015-06-29 21:02:32
   url: MyString
   host_id: 
   event_type_id:
@@ -15,10 +13,8 @@ one:
 two:
   name: MyString
   about: MyText
-  date_begin: 2015-06-29
-  time_begin: 21:02:32
-  date_end: 2015-06-29
-  time_end: 21:02:32
+  dateStart: 2015-06-29 21:02:32
+  dateEnd: 2015-06-29 21:02:32
   url: MyString
   host_id: 
   event_type_id:
