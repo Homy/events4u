@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150701070541) do
+ActiveRecord::Schema.define(version: 20150704220017) do
 
   create_table "event_types", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -22,14 +22,16 @@ ActiveRecord::Schema.define(version: 20150701070541) do
   create_table "events", force: :cascade do |t|
     t.string   "name",          limit: 255
     t.text     "about",         limit: 65535
-    t.datetime "date_begin"
-    t.datetime "date_end"
     t.string   "url",           limit: 255
     t.integer  "host_id",       limit: 4
     t.integer  "event_type_id", limit: 4
     t.integer  "place_id",      limit: 4
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.date     "date_begin"
+    t.time     "time_begin"
+    t.date     "date_end"
+    t.time     "time_end"
   end
 
   add_index "events", ["event_type_id"], name: "index_events_on_event_type_id", using: :btree

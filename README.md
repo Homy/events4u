@@ -1,4 +1,5 @@
 [![Hack Homy/events4u on Nitrous](https://d3o0mnbgv6k92a.cloudfront.net/assets/hack-l-v1-d464cf470a5da050619f6f247a1017ec.png)](https://lite.nitrous.io/hack_button?source=embed&runtime=rails&repo=Homy%2Fevents4u&file_to_open=README.md)
+
 Simple web service for announcements of events.
 We plan to provide the following capabilities:
  - A calendar of planned events, with their detailed description
