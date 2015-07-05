@@ -1,8 +1,9 @@
 Simple web service for announcements of events.
 We plan to provide the following capabilities:
-  - A calendar of planned events, with their detailed description
-  - Subscribe to certain events, their location or reporters
-  - Reports on the event's
+ - A calendar of planned events, with their detailed description
+ - Events import from the social networks
+ - Subscribe to certain events, their location or reporters
+ - Reports on the event's
 
 Ideas are welcome.
 
@@ -10,9 +11,10 @@ Ideas are welcome.
 
 Простий веб-сервіс для оголошень про події.
 Ми плануємо забезпечити такі можливості:
-  - Розклад планованих подій, з їх докладним описом
-  - Підписка на певні події, місця їх проведення або репортерів
-  - Репортажі про проведені події
+- Розклад планованих подій, з їх докладним описом
+- Імпорт подій з соціальних мереж
+- Підписка на певні події, місця їх проведення або репортерів
+- Репортажі про проведені події
 
 Будемо вдячні за ідеї.
 
@@ -21,13 +23,14 @@ Ideas are welcome.
 Простой веб-сервис для анонса событий.
 Мы планируем обеспечить следующие возможности:
  - Расписание планируемых событий, с их подробным описанием
+ - Импорт событий из социальных сетей
  - Подписка на определённые события, места их проведения либо репортёров
  - Репортажи о проведенных событиях
 
 Идеи приветствуются.
 
 -------------------
-
+[![Hack Homy/events4u on Nitrous](https://d3o0mnbgv6k92a.cloudfront.net/assets/hack-l-v1-d464cf470a5da050619f6f247a1017ec.png)](https://lite.nitrous.io/hack_button?source=embed&runtime=rails&repo=Homy%2Fevents4u&file_to_open=README.md)
 
 -------------------
 
@@ -43,14 +46,14 @@ Database adapter          mysql2
 ```
 
 ### Todo's
- - Add translation(first ukrainian,later-multilang)
- - Write Tests
- - Create design
- - Add RTF to reports and events
- - Add photo gallery
- - Add authorisation
- - Add crawling/scraping/aggregating events from outer space ;)
- - Add subscription, rss, etc
+ -Add translation(first ukrainian,later-multilang)
+ -Write Tests
+ -Create design
+ -Add RTF to reports and events
+ -Add photo gallery
+ -Add authorisation
+ -Add crawling/scraping/aggregating events from outer space ;)
+ -Add subscription, rss, API etc
 
 License
 ----
@@ -87,18 +90,19 @@ add i18n
 add reports
 
 gmaps :
-move processing to backgraund
+move processing to background
 add maps to events
 add maps to views/show
-do not show map if theres no objects
+do not show map if there's no objects
 
 geolocation:
-add reverse geolocation
+add reverse geocoding
 add geo-filtering events
 
 security:
-move secrets to secrets :)
+~~move secrets to secrets :)~~
 sort it out with authorization(email-confirm,timeouts...)
 
 events:
 add list of reports below event(on view/show)
+API
