@@ -1,0 +1,7 @@
+<% @title ||= ti(:title, model: full_entry_label).html_safe -%>
+
+<% content_for(:actions, render('actions_show')) %>
+
+<%= render 'attrs' %>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=10&markers=#{@host.latitude}%2C#{@host.longitude}" %>
+

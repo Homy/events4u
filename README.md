@@ -90,8 +90,6 @@ add import/export events
 
 add tests
 
-fix date fields in edit forms
-
 users:
 fix authorization(resolve issue with identical emails)
 add admin tool to manage users
