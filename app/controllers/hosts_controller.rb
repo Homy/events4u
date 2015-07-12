@@ -1,5 +1,5 @@
 class HostsController < CrudController
-  self.permitted_attrs = [:name, :phone, :about, :email, :url, :latitude, :longitude, :country, :city, :street_address]
+  self.permitted_attrs = [:name, :phone, :about, :email, :url, :longitude, :latitude, :country, :city, :street_address]
   self.search_columns = [:name, :country, :city, :street_address]
 
   def index

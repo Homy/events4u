@@ -118,3 +118,5 @@ sort it out with authorization(email-confirm,timeouts...)
 events:
 add list of reports below event(on view/show)
 API(need specs)
+
+TODO: disabled direct access to coordinates( latitude and longitude) for now, as the fields are rendered in a weird way, need to sort it out later
