@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {omniauth_callbacks: "omniauth_callbacks"}
+  authenticate :user do
   resources :users
-  resources :events
-  resources :places
-  resources :hosts
   resources :event_types
+  end
+  authenticate :user do
+    resources :events, :places, :hosts, only: [:new, :create, :edit, :update, :destroy]
+  end
+
+  resources :events, only: [:index, :show]
+  resources :places, only: [:index, :show]
+  resources :hosts, only: [:index, :show]
   resources :reports
 
   # The priority is based upon order of creation: first created -> highest priority.
