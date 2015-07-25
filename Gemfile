@@ -45,7 +45,7 @@ group :development do
   gem "guard", ">= 2.2.2", :require => false
   gem "guard-minitest", :require => false
   gem 'guard-bundler', require: false
-  # resolves issue with
+  # resolves issue with guard/spring conflict(teamcity messages in logs)
   gem 'guard-spring'
   gem "rb-fsevent", :require => false
   gem "terminal-notifier-guard", :require => false
