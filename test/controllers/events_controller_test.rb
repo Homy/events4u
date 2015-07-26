@@ -1,9 +1,9 @@
 require 'test_helper'
 
-class EventsControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:events)
+class EventsControllerTest < Capybara::Rails::TestCase
+  test "sanity" do
+    visit root_path
+    assert page.has_content?("Listing Events")
+    refute page.has_content?("xxxxx")
   end
 end

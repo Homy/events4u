@@ -42,18 +42,19 @@ gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :development do
-  gem "guard", ">= 2.2.2", :require => false
-  gem "guard-minitest", :require => false
+  gem 'guard', '>= 2.2.2', :require => false
+  gem 'guard-minitest', :require => false
   gem 'guard-bundler', require: false
   # resolves issue with guard/spring conflict(teamcity messages in logs)
   gem 'guard-spring'
-  gem "rb-fsevent", :require => false
-  gem "terminal-notifier-guard", :require => false
+  gem 'rb-fsevent', :require => false
+  gem 'terminal-notifier-guard', :require => false
 end
 
 group :test do
-  gem "minitest-reporters"
-  gem "test_after_commit"
+  gem 'minitest-reporters'
+  gem 'test_after_commit'
+  gem 'minitest-rails-capybara'
 end
 
 group :development, :test do
@@ -63,7 +64,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
