@@ -1,0 +1,9 @@
+<%= plain_table(@users) do |t|
+  t.attr_with_show_link :email
+  t.sortable_attrs :last_name, :first_name, :created_at, :updated_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :provider
+  t.attr :current_sign_in_ip, :last_sign_in_ip
+  t.col('', class: 'center') {|entry| gravatar_for entry }
+  # t.edit_action_col
+  t.col('', class: 'center') {|entry| edit_action_link entry}
+  t.col('', class: 'center') {|entry| destroy_action_link entry}
+end %>
