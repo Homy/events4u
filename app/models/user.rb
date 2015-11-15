@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  # :confirmable, :lockable, :timeoutable
   devise :omniauthable,:database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
   def self.find_for_facebook_oauth(auth, signed_in_resource = nil)
 
+    binding.pry
     user = User.where(provider: auth.provider, uid: auth.uid).first
 
     if user
@@ -27,7 +28,6 @@ class User < ActiveRecord::Base
       else
 
         auth.provider = "Facebook"
-
         user = User.create!(first_name:auth.extra.raw_info.first_name,
 
                             last_name:auth.extra.raw_info.last_name,
@@ -38,7 +38,9 @@ class User < ActiveRecord::Base
 
                             password:Devise.friendly_token[0,20],
 
-                            confirmed_at:Time.zone.now # if u don’t want to send any confirmation mail
+                            confirmed_at:Time.zone.now, # if u don’t want to send any confirmation mail
+
+                            token:auth["credentials"]["token"]
 
         )
 
