@@ -47,6 +47,7 @@ Database adapter          mysql2
     git clone https://github.com/Homy/events4u.git
     cd events4u/
     bundle install
+    rails generate simple_form:install
 fix *config/database.yml*
 create *config/secrets.yml* with the data like this:
 FACEBOOK_APP_ID: ~~1621467891254778~~
