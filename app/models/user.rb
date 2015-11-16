@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
 
   def self.find_for_facebook_oauth(auth, signed_in_resource = nil)
 
-    binding.pry
     user = User.where(provider: auth.provider, uid: auth.uid).first
 
     if user
@@ -43,7 +42,6 @@ class User < ActiveRecord::Base
                             token:auth["credentials"]["token"]
 
         )
-
       end
 
     end
