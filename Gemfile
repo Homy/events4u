@@ -34,6 +34,7 @@ gem 'gmaps4rails'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'fb_graph2'
 gem 'oauth2'
 gem 'omniauth-google-oauth2'
 

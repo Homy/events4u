@@ -39,8 +39,7 @@ class User < ActiveRecord::Base
 
                             confirmed_at:Time.zone.now, # if u don’t want to send any confirmation mail
 
-                            token:auth["credentials"]["token"]
-
+                            token:auth["credentials"]["token"], uid:auth["uid"]
         )
       end
 
