@@ -1,0 +1,11 @@
+<%= simple_form_for @event do |f| %>
+    <%= f.input :name %>
+    <%= f.input :about %>
+    <%= f.input :url %>
+    <%= f.association :event_type %>
+    <%= f.association :host %>
+    <%= f.association :place %>
+    <%= f.input :dateStart, start_year: Date.today.year %>
+    <%= f.input :dateEnd, start_year: Date.today.year %>
+    <%= f.button :submit %>
+<% end %>

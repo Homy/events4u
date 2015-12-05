@@ -1,0 +1,20 @@
+
+//Import bootstrap-sprockets
+@import "bootstrap-sprockets";
+
+// Import cerulean variables
+@import "bootswatch/slate/variables";
+
+// Then bootstrap itself
+@import "bootstrap";
+
+// Bootstrap body padding for fixed navbar
+body {
+  padding-top: 5px;
+}
+
+// And finally bootswatch style itself
+@import "bootswatch/slate/bootswatch";
+
+// Whatever application styles you have go last
+@import "crud";
