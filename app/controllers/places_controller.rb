@@ -1,4 +1,6 @@
 class PlacesController < CrudController
+  include UsersHelper
+  before_filter :verify_is_admin , :only => [:edit, :destroy]
   self.permitted_attrs = [:name, :phone, :about, :email, :longitude, :latitude, :country, :city, :street_address]
   self.search_columns = [:name, :country, :city, :street_address]
 
