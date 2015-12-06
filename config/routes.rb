@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {omniauth_callbacks: "omniauth_callbacks"}
+
   authenticate :user do
-  resources :users
-  resources :event_types
-  end
-  authenticate :user do
-    resources :events, :places, :hosts, only: [:new, :create, :edit, :update, :destroy]
+    resources :events, :imported_events, :places, :hosts, :event_types, only: [:new, :create, :edit, :update, :destroy]
+    resources :imported_events
+    resources :users
   end
 
   resources :events, only: [:index, :show]

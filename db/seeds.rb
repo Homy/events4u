@@ -34,3 +34,12 @@ end
 events_list.each do |name, event_type_id, place_id, host_id, url, dateStart, dateEnd, about|
   Event.create(name: name, event_type_id: event_type_id, place_id: place_id, host_id: host_id, url: url, dateStart: dateStart, dateEnd: dateEnd, about: about)
 end
+
+#imported_events
+events_list = [
+    ['Зупинити незаконну забудову в історичній частині Львова', 4, 1, 2, 3, 'www.oporaLviv.org.ua', '20-08-2016 12:00:00', '20-08-2016 15:00:00', 'Акція протесту проти незаконної забудови історичної частини Львова. Геть кровосісь Садового !!!'],
+    ['Геть порошенківську банду', 3, 2, 1, 8, 'http://prezident.gov.ua', '16-05-2016 20:00:00', '16-05-2016 21:00:00', 'Все що твориться останні два роки в Україні - продовження славних традицій Януковичо-Азарівської епохи. Прийшов час це припинити.']
+]
+events_list.each do |name, event_type_id, place_id, host_id, user_id, url, dateStart, dateEnd, about|
+  ImportedEvent.create(name: name, event_type_id: event_type_id, place_id: place_id, host_id: host_id, user_id: user_id, url: url, dateStart: dateStart, dateEnd: dateEnd, about: about)
+end
