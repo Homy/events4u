@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206130235) do
+ActiveRecord::Schema.define(version: 20151206182626) do
 
   create_table "event_types", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20151206130235) do
     t.datetime "updated_at",                  null: false
     t.datetime "dateStart"
     t.datetime "dateEnd"
+    t.string   "importedFrom",  limit: 255
   end
 
   add_index "events", ["event_type_id"], name: "index_events_on_event_type_id", using: :btree
@@ -52,17 +53,23 @@ ActiveRecord::Schema.define(version: 20151206130235) do
   end
 
   create_table "imported_events", force: :cascade do |t|
-    t.string   "name",          limit: 255
-    t.text     "about",         limit: 65535
+    t.string   "name",             limit: 255
+    t.text     "about",            limit: 65535
     t.datetime "dateStart"
     t.datetime "dateEnd"
-    t.string   "url",           limit: 255
-    t.integer  "host_id",       limit: 4
-    t.integer  "place_id",      limit: 4
-    t.integer  "event_type_id", limit: 4
-    t.integer  "user_id",       limit: 4
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "url",              limit: 255
+    t.integer  "host_id",          limit: 4
+    t.integer  "place_id",         limit: 4
+    t.integer  "event_type_id",    limit: 4
+    t.integer  "user_id",          limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "iplace_name",      limit: 255
+    t.float    "iplace_latitude",  limit: 24
+    t.float    "iplace_longitude", limit: 24
+    t.string   "iplace_country",   limit: 255
+    t.string   "iplace_city",      limit: 255
+    t.integer  "iplace_id",        limit: 8
   end
 
   add_index "imported_events", ["event_type_id"], name: "index_imported_events_on_event_type_id", using: :btree
@@ -80,8 +87,10 @@ ActiveRecord::Schema.define(version: 20151206130235) do
     t.string   "country",        limit: 255
     t.string   "city",           limit: 255
     t.string   "street_address", limit: 255
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
+    t.integer  "place_id",       limit: 8
+    t.string   "importedFrom",   limit: 255,   default: "Created manually"
   end
 
   create_table "reports", force: :cascade do |t|
