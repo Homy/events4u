@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :imported_events
+  has_many :imported_events, dependent: :destroy
   # Include default devise modules. Others available are: :confirmable, :lockable, :timeoutable
   devise :omniauthable,:database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
