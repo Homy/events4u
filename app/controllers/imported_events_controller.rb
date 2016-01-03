@@ -3,12 +3,22 @@ class ImportedEventsController < CrudController
   self.search_columns = [:name]
   self.default_sort = 'dateStart'
 
+  def index
+    self.FetchEvents
+    super
+  end
+
   def FetchEvents
     #fetch from social network
+    u = FbGraph2::User.new(current_user.uid).authenticate(current_user.token)
+    u.events.each do |t|
+      e = t.fetch(fields: [:name, :description, :location,:start_time,:updated_time,:parent_group, :owner],:access_token=>current_user.token)
+      ImportedEvent.create(name: e.name, about: e.description, dateStart:  e.start_time , dateEnd:  e.end_time, ihost_id: e.owner.id, iplace_id: e.raw_attributes[:id], user_id: current_user.id, iplace_name: e.raw_attributes[:location], ievent_id: e.id) unless ImportedEvent.find_by_ievent_id(e.id)
+    end
   end
 
 
   def ImportEvents
-    #import into loacl db
+    #import into local db
   end
 end

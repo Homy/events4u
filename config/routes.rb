@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show]
   resources :places, only: [:index, :show]
   resources :hosts, only: [:index, :show]
-  resources :event_types, only: [:index]
+  resources :event_types, only: [:index, :show]
   resources :reports
 
   # The priority is based upon order of creation: first created -> highest priority.

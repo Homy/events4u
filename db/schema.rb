@@ -70,6 +70,8 @@ ActiveRecord::Schema.define(version: 20151206182626) do
     t.string   "iplace_country",   limit: 255
     t.string   "iplace_city",      limit: 255
     t.integer  "iplace_id",        limit: 8
+    t.integer  "ihost_id",         limit: 8
+    t.integer  "ievent_id",        limit: 8
   end
 
   add_index "imported_events", ["event_type_id"], name: "index_imported_events_on_event_type_id", using: :btree
