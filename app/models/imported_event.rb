@@ -3,4 +3,8 @@ class ImportedEvent < ActiveRecord::Base
   belongs_to :place
   belongs_to :event_type
   belongs_to :user
+  def to_s
+    "#{name}"
+  end
+
 end

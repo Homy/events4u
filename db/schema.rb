@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206182626) do
+ActiveRecord::Schema.define(version: 20160103164452) do
 
   create_table "event_types", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20151206182626) do
     t.datetime "dateStart"
     t.datetime "dateEnd"
     t.string   "importedFrom",  limit: 255
+    t.integer  "imported_id",   limit: 8
   end
 
   add_index "events", ["event_type_id"], name: "index_events_on_event_type_id", using: :btree

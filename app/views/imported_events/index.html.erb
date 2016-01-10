@@ -1,0 +1,10 @@
+<% @title ||= ti(:title, models: models_label) -%>
+
+<% content_for(:tools, render('search')) if search_support? %>
+
+<%= crud_table :name, :about, :url, :dateStart, :dateEnd, :iplace_name %>
+
+<%= link_to '<button type="button">Import these</button>'.html_safe, events_path %>
+
+
+<%= render 'list' %>   #TODO remove after this import proc fully implemented
