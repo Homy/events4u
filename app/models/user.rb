@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :imported_events, dependent: :destroy
+  has_many :events
   # Include default devise modules. Others available are: :confirmable, :lockable, :timeoutable
   devise :omniauthable,:database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -27,7 +28,6 @@ class User < ActiveRecord::Base
       else
 
         auth.provider = "Facebook"
-        require 'pry'; binding.pry
         user = User.create!(first_name:auth.extra.raw_info.first_name,
 
                             last_name:auth.extra.raw_info.last_name,

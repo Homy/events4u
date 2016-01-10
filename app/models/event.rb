@@ -7,10 +7,13 @@ class Event < ActiveRecord::Base
   validate :EndsLaterThanStarts?
 
   def EndsLaterThanStarts?
-    if dateStart >= dateEnd
-      errors.add(:dateEnd, 'must be later than date of beginning!')
+    if not dateEnd.nil?
+      if dateStart >= dateEnd
+        errors.add(:dateEnd, 'must be later than date of beginning!')
+      end
     end
   end
+
   def to_s
     "#{name}"
   end

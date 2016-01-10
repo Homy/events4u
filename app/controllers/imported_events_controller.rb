@@ -17,8 +17,4 @@ class ImportedEventsController < CrudController
     end
   end
 
-
-  def ImportEvents
-    #import into local db
-  end
 end

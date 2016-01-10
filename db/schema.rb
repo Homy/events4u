@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206182626) do
+ActiveRecord::Schema.define(version: 20160110195744) do
 
   create_table "event_types", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -31,11 +31,14 @@ ActiveRecord::Schema.define(version: 20151206182626) do
     t.datetime "dateStart"
     t.datetime "dateEnd"
     t.string   "importedFrom",  limit: 255
+    t.integer  "imported_id",   limit: 8
+    t.integer  "user_id",       limit: 4
   end
 
   add_index "events", ["event_type_id"], name: "index_events_on_event_type_id", using: :btree
   add_index "events", ["host_id"], name: "index_events_on_host_id", using: :btree
   add_index "events", ["place_id"], name: "index_events_on_place_id", using: :btree
+  add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
   create_table "hosts", force: :cascade do |t|
     t.string   "name",           limit: 255
@@ -133,6 +136,7 @@ ActiveRecord::Schema.define(version: 20151206182626) do
   add_foreign_key "events", "event_types"
   add_foreign_key "events", "hosts"
   add_foreign_key "events", "places"
+  add_foreign_key "events", "users"
   add_foreign_key "imported_events", "event_types"
   add_foreign_key "imported_events", "hosts"
   add_foreign_key "imported_events", "places"
