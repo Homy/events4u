@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :events, :event_types, :places, :hosts, only: [:new, :create, :edit, :update, :destroy]
     resources :imported_events
     resources :users
+    match 'import_events', to: 'users#import_events', via: [:get, :post]
   end
 
   resources :events, only: [:index, :show]

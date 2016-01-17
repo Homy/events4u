@@ -2,9 +2,11 @@ class ImportedEventsController < CrudController
   self.permitted_attrs = [:dateStart, :dateEnd, :name, :about, :url, :host_id, :event_type_id, :place_id]
   self.search_columns = [:name]
   self.default_sort = 'dateStart'
+  helper_method :current_user
 
   def index
     self.FetchEvents
+    current_user.import_events
     super
   end
 

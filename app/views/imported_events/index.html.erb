@@ -4,7 +4,6 @@
 
 <%= crud_table :name, :about, :url, :dateStart, :dateEnd, :iplace_name %>
 
-<%= link_to '<button type="button">Import these</button>'.html_safe, current_user.imported_events(:method =>  import_events) %>
-
+<%= link_to '<button type="button">Import these</button>'.html_safe, import_events_path %>
 
 <%= render 'list' %>   #TODO remove after this import proc fully implemented
